@@ -5,12 +5,12 @@ Es importante resaltar que las clases sólo proveen estructura. Son un molde con
 el cual podemos construir objetos específicos. La clase señala las propiedades
 que los hoteles que modelemos tendrán, pero no es ningún hotel específico. Para
 eso necesitamos las instancias.
-    para crear una clase: 
-        Class
-## Instancias
-Mienstras que las clases proveen estructura, las instancias son los objetos reales que creamos en nuestro programa
-
+    para crear una clase:
 ```py
 class Hotel:
     pass
 ```
+## Instancias
+Mienstras que las clases proveen estructura, las instancias son los objetos reales que creamos en nuestro programa.
+
+
