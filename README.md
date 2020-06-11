@@ -133,11 +133,70 @@ hotel.anadir_huespedes(3)
 hotel.checkout(1)
 hotel.ocupacion_total() # 2
 ```
-Ahora que ya sabemos qué son las clases y cómo las podemos utilizar en nuestros
-programas, platícanos qué clases te serían útiles para modelar en uno de tus
-programas.
 
-    
+# Tipos de datos Abstractos
+En python todo es un objeto y tiene un tipo. cualquier cosa en la vida real tiene un tipo, por ejemplo existen tipos de pan, tipos de queso, tipos de servicio, tipos de actividades, etc. La programacion orientada a objeto nos permite modelar el mundo a su manera.
+Con los objetos se puede:
+- Crear
+- Manipular
+- Destruir
 
+en python se pueden eliminar directamente cuando nadie mas esta usando el objeto con el garbash Colector
+tambien existe el metodo del para destruir.
 
+Ventajas: 
+- Decomposicion (descomponer en partes el objeto)
+- Abstraccion
+- Encapsular (esconder ciertos datos que no son importantes)
 
+```py
+# Definicion de clase
+
+class <nombre de clase>(<super_clase>): #permite definir el tipo datos abstractos 
+    def __unit__(self, <params>): #init. se lo conoce como el contructor, los metodos siempre inician con el parametro self, siempre usar SELF.
+        <expresion>
+    def <nombre_del_metodo>(self,<params>): #antes se usaba para funcion, pero tambien para metodos
+        <expresion> #la expresion invoca lo que hace el metodo.
+```
+Ejemplo: 
+```py
+#Definicion
+Class Persona:
+    def__init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
+    def saluda(self, otra_persona):
+        return f"Hola {otra_persona.nombre}, me llamo {self.nombre}."
+# Uso
+>>> david = Persona("David", 35)
+>>> Erika = Persona("Erika", 32)
+
+>>> david.saluda(erika)
+"hola Erika, me llamo David"
+```
+### Instancia
+Mienstras que la clase es un molde, a los objeto se lo conoce como instancia, imagina que tienes un molde que hace botella, la clase es el molde y cada vez que se hace una botella, a eso se lo conoce como instancia.
+las instancias pueden tener atributos distintos, diferentes colores, formas, etc.
+cada vez que generamos una nueva instancia se genera un nuevo contructor (donder.init) double guion bajo.
+los atributos de clase nos permiten hacer varias cosas: 
+-variables de instancia
+-metodos
+-variables privadas (convenciones (_) )
+```py
+class Coordenada:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    def distancia(self, otra_coordenada): #otra_coordenada es una instancia de Coordenada
+        x_diff = (self.x - otra_coordenada.x)**2 # metodo euclidiano
+        y_diff = (self.y - otra_coordenada.y)**2
+
+        return (x_diff + y_diff)**0.5
+
+if __name__ == "__main__":
+    coord_1 = Coordenada(3, 30)
+    coord_2 = Coordenada(4, 8)
+
+    print(coord_1.distancia(coord_2))
+    print(isinstance(coord_2, Coordenada))
+```
