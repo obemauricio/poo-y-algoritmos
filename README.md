@@ -9,7 +9,8 @@ eso necesitamos las instancias.
         Class
 ## Instancias
 Mienstras que las clases proveen estructura, las instancias son los objetos reales que creamos en nuestro programa
-´´´py
-    Class Hotel:
-        pass
-´´´
+
+```py
+class Hotel:
+    pass
+```
