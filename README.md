@@ -2,8 +2,15 @@
 # Tabla de contenidos
 - [Programacion orientada a objetos](#Programacion_orientada_a_objetos)
 - [Clases](#Clases)
+- [Instancias](#Instancias)
+- [Atributos de la instancia](#Atributos_de_la_instancia)
+- [Metodos de instancia](#Metodos_de_instancia)
+- [Tipos de datos Abstractos](#Tipos_de datos_Abstractos)
+- [Instancia](#Instancia)
+- [decomposicion](#decomposicion)
+- [abstraccion](#abstraccion)
 
-## Programacion orientada a objetos
+# Programacion orientada a objetos
 Uno de los elementos más importantes de los lenguajes de programación
 es la utilización de clases para organizar programas en módulos y abstracciones
 de datos.
@@ -109,6 +116,7 @@ class Hotel:
 hotel = Hotel(numero_maximo_de_huespedes=50, lugares_de_estacionamiento=20)
 print(hotel.lugares_de_estacionamiento) # 20
 ```
+
 ## Metodos de instancia
 
 Mientras que los atributos de la instancia describen lo que representa el
@@ -137,7 +145,8 @@ hotel.anadir_huespedes(3)
 hotel.checkout(1)
 hotel.ocupacion_total() # 2
 ```
-# Tipos de datos Abstractos
+
+## Tipos de datos Abstractos
 En python todo es un objeto y tiene un tipo. cualquier cosa en la vida real tiene un tipo, por ejemplo existen tipos de pan, tipos de queso, tipos de servicio, tipos de actividades, etc. La programacion orientada a objeto nos permite modelar el mundo a su manera.
 Con los objetos se puede:
 - Crear
@@ -177,7 +186,8 @@ Class Persona:
 >>> david.saluda(erika)
 "hola Erika, me llamo David"
 ```
-### Instancia
+
+## Instancia
 Mienstras que la clase es un molde, a los objeto se lo conoce como instancia, imagina que tienes un molde que hace botella, la clase es el molde y cada vez que se hace una botella, a eso se lo conoce como instancia.
 las instancias pueden tener atributos distintos, diferentes colores, formas, etc.
 cada vez que generamos una nueva instancia se genera un nuevo contructor (donder.init) double guion bajo.
@@ -186,6 +196,7 @@ los atributos de clase nos permiten hacer varias cosas:
 -metodos
 -variables privadas (convenciones (_) )
 ```py
+
 class Coordenada:
     def __init__(self, x, y):
         self.x = x
@@ -268,7 +279,7 @@ por tal motivo matemáticamente quedaría de la siguiente manera:
 return (x_diff + y_diff)**0.5 quedaría de la siguiente manera:
 - (1 + 484)^(1/2) = 22.0227, su raiz cuadrada el resultado final.
 
-# decomposicion
+## decomposicion
 Es partir un problema en problemas mas pequeños, las clases permiten crear mayores abstracciones en forma de componentes.
 Cada clase se encarga de una parte del problema y el programa se vuelve mas facil de mantener. 
 
@@ -297,6 +308,7 @@ class Motor:
     def intecta_gasolina(self, cantidad):
         pass
 ```
+
 ## abstraccion
 ```py
 class Lavadora:
