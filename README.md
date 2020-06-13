@@ -248,8 +248,8 @@ los parametros (x, y) en init son las ultimas instancias que definimos:
 
 ahora, recuerda que nuestro print fue:
 
-print(coord_1.distancia(coord_2))
-coord_1 tomaria el lugar del primer metodo, es decir:
+print(coord_1.distancia(coord_2)).
+coord_1 tomaria el lugar del primer metodo, es decir:.
 self.x = 3
 self.y = 30
 luego como coord_2 esta dentro del método distancia tomaría el lugar de la instancia “otra_coordenada” pero lo mas interesante es que esta instancia hace uso del molde en el primer método:
