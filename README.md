@@ -1,16 +1,19 @@
 # poo-y-algoritmos by Obe
 # Tabla de contenidos
+
 - [Programacion orientada a objetos](#Programacion_orientada_a_objetos)
-- [Clases](#Clases)
-- [Instancias](#Instancias)
-- [Atributos de la instancia](#Atributos_de_la_instancia)
-- [Metodos de instancia](#Metodos_de_instancia)
-- [Tipos de datos Abstractos](#Tipos_de datos_Abstractos)
-- [Instancia](#Instancia)
-- [decomposicion](#decomposicion)
-- [abstraccion](#abstraccion)
+    - [Introduccion](#Introduccion)
+    - [Clases](#Clases)
+    - [Instancias](#Instancias)
+    - [Atributos de la instancia](#Atributos_de_la_instancia)
+    - [Metodos de instancia](#Metodos_de_instancia)
+    - [Tipos de datos Abstractos](#Tipos_de datos_Abstractos)
+    - [Instancia](#Instancia)
+    - [decomposicion](#decomposicion)
+    - [abstraccion](#abstraccion)
 
 # Programacion orientada a objetos
+## Introduccion
 Uno de los elementos más importantes de los lenguajes de programación
 es la utilización de clases para organizar programas en módulos y abstracciones
 de datos.
