@@ -203,7 +203,7 @@ if __name__ == "__main__":
 ```
 Primero empecemos con las definiciones:
 
--class es una clase.
--def es una función, pero dentro de un class es un metodo, por lo tanto en nuestro ejemplo es un método.
--constructor es el primer método que se ejecuta.
--instancia es lo que esta dentro de un método, después de self. Ejm.: (self, otra_coordenada).
+- class es una clase.
+- def es una función, pero dentro de un class es un metodo, por lo tanto en nuestro ejemplo es un método.
+- constructor es el primer método que se ejecuta.
+- instancia es lo que esta dentro de un método, después de self. Ejm.: (self, otra_coordenada).
