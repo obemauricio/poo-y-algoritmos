@@ -204,10 +204,11 @@ if __name__ == "__main__":
 Para los que se pregunten como se llego a ese resultado de forma matemática. aquí dejo mi aporte:
 Primero empecemos con las definiciones:
 
-class es una clase
-def es una función, pero dentro de un class es un metodo, por lo tanto en nuestro ejemplo es un método.
-constructor es el primer método que se ejecuta
-instancia es lo que esta dentro de un método, después de self. Ejm.: (self, otra_coordenada).
+-class es una clase
+-def es una función, pero dentro de un class es un metodo, por lo tanto en nuestro ejemplo es un método.
+-constructor es el primer método que se ejecuta
+-instancia es lo que esta dentro de un método, después de self. Ejm.: (self, otra_coordenada).
+
 ```py
 class Coordenada:
 	def __init__(self, x, y):  #hasta aquí lo que esta después de self, solo son parametros.
