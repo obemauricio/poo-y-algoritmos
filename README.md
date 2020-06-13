@@ -1,5 +1,8 @@
 # poo-y-algoritmos by Obe
-# Programacion orientada a objetos
+# Tabla de contenidos
+- [Programacion orientada a objetos](Programacion orientada a objetos)
+
+## Programacion orientada a objetos
 Uno de los elementos más importantes de los lenguajes de programación
 es la utilización de clases para organizar programas en módulos y abstracciones
 de datos.
