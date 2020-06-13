@@ -133,7 +133,6 @@ hotel.anadir_huespedes(3)
 hotel.checkout(1)
 hotel.ocupacion_total() # 2
 ```
-
 # Tipos de datos Abstractos
 En python todo es un objeto y tiene un tipo. cualquier cosa en la vida real tiene un tipo, por ejemplo existen tipos de pan, tipos de queso, tipos de servicio, tipos de actividades, etc. La programacion orientada a objeto nos permite modelar el mundo a su manera.
 Con los objetos se puede:
@@ -264,3 +263,33 @@ por tal motivo matemáticamente quedaría de la siguiente manera:
 
 return (x_diff + y_diff)**0.5 quedaría de la siguiente manera:
 - (1 + 484)^(1/2) = 22.0227, su raiz cuadrada el resultado final.
+
+# decomposicion
+Es partir un problema en problemas mas pequeños, las clases permiten crear mayores abstracciones en forma de componentes.
+Cada clase se encarga de una parte del problema y el programa se vuelve mas facil de mantener. 
+
+```py
+class Automovil:
+    def __init__(self, modelo, marca, color):
+        self.modelo = modelo
+        self.marca = marca
+        self.color = color
+        self._estado = "en_reposo" #es una variable privada o interna
+        self._motor = Motor(cilindros=4) #variable privada
+    
+    def acelerar(self, tipo="despacio"):
+        if tipo == "rapida":
+            self.motor.inyecta_gasolina(10)
+        else:
+            self.motor.inyecta_gasolina(3)
+        
+        self._estado = "en movimiento"
+class Motor:
+    def __init__(self, cilindros, tipo="gasolina"): #nuevo tipo de parametro, parametro por defecto
+        self.cilindro = cilindro
+        self.tipo = tipo
+        self._temperatura = 0
+    
+    def intecta_gasolina(self, cantidad):
+        pass
+```
