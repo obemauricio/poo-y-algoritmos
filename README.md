@@ -7,7 +7,7 @@
     - [Instancias](#Instancias)
     - [Atributos de la instancia](#Atributos_de_la_instancia)
     - [Metodos de instancia](#Metodos_de_instancia)
-    - [Tipos de datos Abstractos](#Tipos_de datos_Abstractos)
+    - [Tipos de datos Abstractos](#Tipos_de_datos_Abstractos)
     - [Instancia](#Instancia)
     - [decomposicion](#decomposicion)
     - [abstraccion](#abstraccion)
