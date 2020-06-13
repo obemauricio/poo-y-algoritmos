@@ -249,3 +249,18 @@ ahora, recuerda que nuestro print fue:
 ```py
 print(coord_1.distancia(coord_2))
 ```
+
+coord_1 tomaria el lugar del primer metodo, es decir:
+- self.x = 3
+- self.y = 30
+
+luego como coord_2 esta dentro del método distancia tomaría el lugar de la instancia “otra_coordenada” pero lo mas interesante es que esta instancia hace uso del molde en el primer método:
+- otra_coordenada.x = 4
+- otra_coordenada.y = 8
+
+por tal motivo matemáticamente quedaría de la siguiente manera:
+- x_diff = (3 - 4)^2 = 1
+- y_diff = (30 - 8)^2 = 484
+
+return (x_diff + y_diff)**0.5 quedaría de la siguiente manera:
+- (1 + 484)^(1/2) = 22.0227, su raiz cuadrada el resultado final.
