@@ -1,6 +1,6 @@
 # poo-y-algoritmos by Obe
 # Tabla de contenidos
-- [Programacion orientada a objetos](Programacion orientada a objetos)
+- [Programacion orientada a objetos](#Programacion_orientada_a_objetos)
 
 ## Programacion orientada a objetos
 Uno de los elementos más importantes de los lenguajes de programación
