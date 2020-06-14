@@ -1,4 +1,7 @@
-# poo-y-algoritmos by Obe
+<div align="center">
+  <h1>Programación orientada a objetos y Algoritmos con Python</h1>
+  <h3>by Mauricio Obe</h3>
+</div>
 # Tabla de contenidos
 
 - [Programacion orientada a objetos](#Programacion_orientada_a_objetos)
@@ -11,8 +14,13 @@
     - [Instancia](#Instancia)
     - [decomposicion](#decomposicion)
     - [abstraccion](#abstraccion)
+    - [Encapsulacion, getters and setters](#Encapsulacion,_getters_and_setters)
+    - [Herencia](#Herencia)
+    - [Polimorfismo](#Polimorfismo)
 
+# ```py
 # Programacion orientada a objetos
+
 ## Introduccion
 Uno de los elementos más importantes de los lenguajes de programación
 es la utilización de clases para organizar programas en módulos y abstracciones
@@ -357,3 +365,144 @@ anadiendo jabon
 lavando la ropa
 centrifugando la ropa
 ```
+
+## Encapsulacion, getters and setters
+la encapsulacion permite agrupar datos y su comportamieto, permite agrupar datos y previene modificaciones no autorizadas.
+las clases nos permiten tener son variables de instancias, metodos internos (privados o publicos) y todo esto se encuentra en un solo lugar por tal motivo se entiende que es programacion orientada a objetos.
+lo importante de la encapsulacion, tiene que ver con la programacion defensiva, lo cual permite el acceso a esos datos y la modificacion de esos datos, dado que python es muy abierto a ser modificado por tal motivo existe la programacion defensiva que controla este aspecto.
+
+```py
+class CasillaDeVotacion:
+    def __init__(self, identificador, pais):
+        self._identificador = identificador
+        self._pais = pais
+        self._region = None
+
+    #getters, Decoradores, property significa que es funcion que se definira como propiedad 
+    #se accede a esta funcion a travez de dot notation
+    @property 
+    def region(self):
+        return self._region
+    #Funcion que nos permite modificar valores
+    @region.setter 
+    def set_region(self, region):
+        if region in self._pais:
+            self._region = region
+
+            raise ValueError(f"La region {region} no es valida en {self._pais}")
+#introduce de identificador, y las regiones dentro de la variable pais.
+>>> casilla = CasillaDeVotacion(123, ["Ciudad de Mexico", "Morelos"])
+# al introducir la nueva instancia casilla seguido de la instancia region nos rebota una variable privada. 
+>>> casilla.region
+None
+>>> casilla.region = "Ciudad de Mexico"
+>>> casilla.region
+"Ciudad de Mexico"
+```
+
+## Herencia
+Permite modelar una jerarquia de objetos o clases, nos permite compartir cierto comportamiento comun en la jerarquia.
+Al padra se le conoce como superclase y al hijo como subclase. 
+las super clases se las menciona asi por que estan arriba.
+las sub clases se les llama asi porque heredan el codigo de las super clases
+
+```py
+class Rectangulo:
+
+    def __init_(self, base, altura):
+        self.base = base
+        self.altura = altura
+
+    def area(self):
+        return self.base * self.altura
+
+class Cuadrado(Rectangulo):
+# Para heredar el comportamiento se define la super clase que es el rectangulo, porque esta arriba.
+    
+    def __init__(self, lado):
+    #solo necesitamos un lado para definir un cuadrado
+        super().__init__(lado, lado)
+        #super nos permite tener una referencia de la super clase
+
+if __name__ == "__main__":
+    rectangulo = Rectangulo(base=3, altura=4)
+    print(rectangulo.area())
+
+    cuadrado = Cuadrado(lado=5)
+    print(cuadado.area())
+    #ejecutamos el metodo area  dentro de la clase cuadrado, es decir estamos heredando el metodo de la super clase
+```
+
+## Polimorfismo
+Es la habilidad de tomar varias formas, en python, nos permite cambiar el comportamiento de una superclase para adaptarlo a subclase.
+
+```py
+class Persona:
+    
+    def __init__(self, nombre):
+        self.nombre = nombre
+    
+    def avanza(self):
+        print("Ando caminando")
+
+class Ciclista(persona):
+#la clase ciclista extiende persona, asi se lee
+#Es una subclase que hereda una superclase
+    def __init__(self, nombre):
+        super().__init__(nombre)
+    
+    def avanza(self):
+        print("ando moviendome en mi bicicleta")
+
+def main():
+    persona = Persona("David")
+    persona.avanza()
+
+    ciclista = Ciclista("Daniel")
+    ciclista.avanza()
+
+if __name__ == "__main__":
+    main()
+```
+
+## Introduccion a la complejidad algoritmica
+Nos permite comparar la eficiencia entre dos algoritmos, esto nos ayuda a predecir el tiempo que se tarda en resolver un problema.
+podemos definirla como T(n) funcion de tiempo.
+podemos tener aproximaciones:
+- Cronometrar el tiempo en el que corre un algoritmo, depende de la computadora y es muy inestable de comparar. 
+- Contar los pasos con una medida abstracta de operacion. 
+- contar los pasos conforme nos aproximamos al infinito.
+
+```py
+import time
+
+def factorial(n):
+    respuesta = 1
+
+    while n > 1:
+        respuesta *= n
+        n -= 1
+        # 5*1, 5-1, 4*1, 4-1, 3*1, 3-1, 3*1, 3-1, 2*1, 2-1, 1.
+    return respuesta
+    
+def factorial_r(n):
+    if n == 1:
+        return 1
+
+    return n * factorial(n - 1)
+
+if __name__ == "__main__":
+    n = 1000
+
+    comienzo = time.time()
+    print(factorial(n))
+    final = time.time()
+    print(final - comienzo)
+
+    comienzo = time.time()
+    print(factorial_r(n))
+    final =time.time()
+    print(final - comienzo)
+```
+
+
