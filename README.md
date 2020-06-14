@@ -465,7 +465,8 @@ if __name__ == "__main__":
     main()
 ```
 
-## Introduccion a la complejidad algoritmica
+# Introduccion a la complejidad algoritmica
+## Aproximacion
 Nos permite comparar la eficiencia entre dos algoritmos, esto nos ayuda a predecir el tiempo que se tarda en resolver un problema.
 podemos definirla como T(n) funcion de tiempo.
 podemos tener aproximaciones:
@@ -504,5 +505,74 @@ if __name__ == "__main__":
     final =time.time()
     print(final - comienzo)
 ```
+
+## Conteo abstracto
+la anterior forma de contar no era eficiente, el conteo abstracto trata de una aproximacion mas matematica.
+
+```py
+def f(x): #la variable es x
+    respuesta = 0
+    for i in range (1000): #correra 1000 veces sin importar x, es una constante
+    for i in range(x): #si depende de x
+        respuesta += x
+    for i int range(x): # 
+        for j in range(x):
+            respuesta += 1
+            respuesta += 1
+    return respuesta
+```
+
+## Notacion asintotica
+en este caso no importan variaciones pequeñas, el enfoque se centra en lo que pasa conforme el tamaño del problema se acerca al infinito. 
+En el Big O notation solo importa el valor de mayor tamaño, es decir que genera resultados grandes. 
+
+```py
+#Ley de la suma 
+def f(n):
+    for i in range(n):
+        print(i)
+    for i in range(n):
+        print(i)
+# 0(n) + (0)n = 0(n + n) ; 0(2n) ; funcion lineal
+```
+ahora veamos otro ejemplo.
+```py
+#Ley de la suma
+def f(n):
+    for i in range(n):
+        print(i)
+    for i in range(n * n):
+        print(i)
+# 0(n) + 0(n * n) = 0 (n + n^2) = 0(n^2)
+```
+ahora veamos un ejemplo de ley de multiplicacion
+```py
+#ley de la multiplicacion
+def f(n):
+    for i in range(n):
+        for j in range(n):
+            print(i, j)
+# 0(n) * 0(n) = 0(n * n) = 0(n^2) 
+```
+ahora veamos un ejemplo de recursividad multiple
+```py
+#Recursividad multiple
+def fibonacci(n):
+    if n == 0 or n == 1:
+        return 1
+    return fibonacci(n - 1) + fibonacci(n - 2)
+#0(2^n)
+```
+
+## Clases de complegidad algoritmica
+- O(1) Constante; como no existe variable, el loop se tardara lo mismo cada vez.
+- O(n) Lineal; se tardara el mismo numero de veces que el valor de la variable.
+- O(Log n) Logaritmica; al principio crecera mucho, pero luego crecera poco hacia el infinito.
+- O(n Log n) Log lineal; 
+- O(n^2) Polinomial
+- O(2^n) Exponencial
+<div align="center"> 
+  <img src="complejidad algoritmica.JPG" width="250">
+</div>
 
 
