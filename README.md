@@ -572,7 +572,7 @@ def fibonacci(n):
 - O(n^2) Polinomial
 - O(2^n) Exponencial
 <div align="center"> 
-  <img src="complejidad algoritmica.JPG" width="250">
+  <img src="complejidad algoritmica.JPG" width="1000">
 </div>
 
 
