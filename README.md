@@ -17,7 +17,12 @@
     - [Encapsulacion, getters and setters](#Encapsulacion,_getters_and_setters)
     - [Herencia](#Herencia)
     - [Polimorfismo](#Polimorfismo)
-
+- [Introduccion a la complejidad algoritmica](#Introduccion_a_la_complejidad_algoritmica)
+    - [Aproximacion](#Aproximacion)
+    - [Conteo abstracto](#Conteo_abstracto)
+    - [Notacion asintotica](#Notacion_asintotica)
+    - [Clases de complegidad algoritmica](#Clases_de_complegidad_algoritmica)
+- [Algoritmos de busqueda y ordenacion](#Algoritmos_de_busqueda_y_ordenacion)
 # ```py
 # Programacion orientada a objetos
 
@@ -575,4 +580,108 @@ def fibonacci(n):
   <img src="complejidad algoritmica.JPG" width="750">
 </div>
 
+# Algoritmos de busqueda y ordenacion
+
+## Busqueda lineal
+
+```py
+import random
+
+def busqueda_lineal(lista, objetivo): # O(n)
+    match = False
+    
+    for elemento in lista:
+        if elemento == objetivo:
+            match = True
+            break
+        
+    return match
+
+if __name__ == "__main__":
+    tamano_de_lista = int(input("De que tamano sera la lista?: "))
+    objetivo = int(input("que numero quieres encontrar?: "))
+
+    lista = [random.randint(1, 100) for i in range(tamano_de_lista)]
+
+    encontrado = busqueda_lineal(lista, objetivo)
+    print (lista)
+    print(f"El elemento {objetivo} {'esta' if encontrado else 'no esta'} en la lista")
+```
+
+## Busqueda binaria
+Divide en 2 el problema hasta encontrar la respuesta, pero el problema es que los datos deben estar ordenados y no existe un buen algoritmo que ordene eficientemente los datos.
+si los datos estan ordenados, entonces la mejor opcion es la busqueda binaria.
+si los datos estan desordenados se puede usar busqueda lineals si se la va usar una vez, pero si se la va a usar varias veces se tiene que ordenar los datos para luego usar busqueda binaria. 
+
+```py
+import random
+
+def busqueda_binaria(lista, comienzo, final, objetivo):
+    print(f"buscando {objetivo} entre {lista[comienzo]} y {lista[final - 1]}")
+    if comienzo > final:
+        return False
+    
+    medio = (comienzo + final) // 2 
+    if lista[medio] == objetivo:
+        return True
+    elif lista[medio] < objetivo:
+        return busqueda_binaria(lista, medio + 1, final, objetivo)
+    else:
+        return busqueda_binaria(lista, comienzo, medio - 1, objetivo)
+
+
+if __name__ == "__main__":
+    tamano_de_lista = int(input("De que tamano es la lista?: "))
+    objetivo = int(input("que numero quieres encontrar?: "))
+
+    lista = sorted([random.randint(0, 100) for i in range(tamano_de_lista)])
+
+    encontrado = busqueda_binaria(lista, 0, len(lista), objetivo )
+    
+    print(lista)
+    print(f"El elemento {objetivo} {'esta' if encontrado else 'no esta'} en la lista")      
+```
+Ahora comparemos cual de los dos metodos son mas eficientes a travez de un contador.
+```py
+import random
+
+def busqueda_lineal(lista, objetivo, iter_lin=0):
+    match = False
+
+    for elemento in lista:
+        iter_lin += 1
+        if elemento == objetivo:
+            match = True
+            break
+    return (match, iter_lin)
+
+def busqueda_binaria(lista, comienzo, final, objetivo, iter_bin=0):
+    iter_bin += 1
+    if comienzo > final:
+        return(False, iter_bin)
+    
+    medio = (comienzo + final) // 2
+    
+    if lista[medio] == objetivo:
+        return (True, iter_bin)
+    elif lista[medio] < objetivo: 
+        return busqueda_binaria(lista, medio + 1, final, objetivo, iter_bin = iter_bin)
+    else:
+        return busqueda_binaria(lista, comienzo, medio - 1, objetivo, iter_bin = iter_bin)
+
+if __name__ == "__main__":
+    tamano_de_lista = int(input("De que tamaño es la lista?: "))
+    objetivo = int(input("Que numero quieres encontrar?: "))
+
+    lista = sorted([random.randint(0, 100) for i in range(tamano_de_lista)])
+
+    (encontrado, iter_bin) = busqueda_binaria(lista, 0, len(lista), objetivo)
+    (encontrado, iter_lin) = busqueda_lineal(lista, objetivo)
+
+    #print(lista)
+    print(f"El elemento {objetivo} {'esta' if encontrado else 'no esta'} en la lista")
+    print(f"Iteraciones busqueda lineal: {iter_lin}")
+    print(f"iteraciones busqueda binaria: {iter_bin}")
+```
+## 
 
