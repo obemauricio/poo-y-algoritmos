@@ -1,13 +1,21 @@
-# Cuando se usa el bucle: crea una lista, 
-# pero cuando solo se usa la variable del bucle crea un int con el valor tota de la lista 
-#
-def ordenamiento_por_insercion(lista):
-    for indice in range(1, len(lista)): # indice indica el rango de 1 a n(lista)
-        valor_actual = lista[indice] # elemento de lista de acuerdo al numero de orden
-        posicion_actual = indice # numero de orden segun el rango de 1 a n
+import random
+def ordenamiento_por_inserccion(lista):
 
-    while posicion_actual > 0 and lista[posicion_actual -1] > valor_actual:
+    for indice in range(1, len(lista)): 
+        valor_actual = lista[indice]
+        posicion_actual = indice
+
+    while posicion_actual > 0 and lista[posicion_actual - 1] > valor_actual:
         lista[posicion_actual] = lista[posicion_actual - 1]
         posicion_actual -= 1
 
-    lista[posicion_actual] = valor_actual
+        lista[posicion_actual] = valor_actual
+        
+
+if __name__ == "__main__":
+    tamano_de_lista = int(input("Cual va a ser el tamaño de la lista?: "))
+    lista = [random.randint (0, 100) for i in range(tamano_de_lista)]
+    print(lista)
+
+    lista_ordenada = ordenamiento_por_inserccion(lista)
+    print(lista_ordenada)
