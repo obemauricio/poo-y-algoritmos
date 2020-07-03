@@ -711,4 +711,9 @@ if __name__ == "__main__":
     print(lista_ordenada)
 ```
 
-## sdadas
+## Ordenamiento por insercion
+
+```py
+def ordenamiento_por_insercion(lista):
+    
+```
